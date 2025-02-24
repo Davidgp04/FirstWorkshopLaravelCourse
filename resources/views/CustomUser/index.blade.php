@@ -10,7 +10,7 @@
   @foreach ($viewData["users"] as $user)
   <div>
     <div>
-      <img src="{{asset('images/image.png)}}">
+      <img src="{{asset('images/image.png')}}">
       <div>
         <a href="#">{{ $user["id"] }}</a>
         <p>{{ $user["username"] }}</p>
