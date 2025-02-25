@@ -1,0 +1,25 @@
+1. Install Composer (if not already installed)  
+   - Download from https://getcomposer.org  
+   - Verify installation: composer -V  
+
+2. Install Laravel dependencies  
+   - Run: composer install  
+
+3. Set up the environment file  
+   - Copy the example file: cp .env.example .env  
+   - Open .env and update database settings (lines 24-29)  
+
+4. Generate the application key  
+   - Run: php artisan key:generate  
+
+5. Clear configuration and cache  
+   - Run:  
+     php artisan config:clear  
+     php artisan cache:clear  
+
+6. Run database migrations (if needed)  
+   - Run: php artisan migrate  
+
+7. Start the development server  
+   - Run: php artisan serve  
+   - Open: http://127.0.0.1:8000  
