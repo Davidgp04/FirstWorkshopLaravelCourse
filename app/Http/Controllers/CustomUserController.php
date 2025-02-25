@@ -18,15 +18,21 @@ class CustomUserController extends Controller
     {
         return view('CustomUser.form');
     }
-    public function save(Request $request): View
+    public function save(Request $request): \Illuminate\Http\RedirectResponse
     {
         $request->validate([
             'username' => "required",
-            'email' => "required",
+            'email' => "required|email|unique:custom_users,email",
             'password' => "required"
-        ]);
+        ],
+    ['email.unique' => 'Email already exists']);
 
         CustomUser::create($request->only(['username', 'email', 'password']));
+        return redirect()->route('user.success');
+    }
+
+    public function success(): View
+    {
         return view('CustomUser.success');
     }
 
