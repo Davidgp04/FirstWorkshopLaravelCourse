@@ -12,8 +12,8 @@
     <div>
       <img src="{{asset('images/image.png')}}">
       <div>
-        <a href="#">{{ $user["id"] }}</a>
-        <p>{{ $user["username"] }}</p>
+        <a href="{{route('user.show',['id'=>$user->id])}}">{{ $user->id }}</a>
+        <p>{{ $user->username }}</p>
       </div>
     </div>
   </div>

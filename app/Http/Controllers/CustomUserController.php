@@ -30,4 +30,18 @@ class CustomUserController extends Controller
         return view('CustomUser.success');
     }
 
+    public function show(string $id): View
+    {
+        $viewData=[];
+        $viewData["user"]=CustomUser::findOrFail($id);
+        return view('CustomUser.show')->with('viewData',$viewData);
+    }
+
+    public function delete(string $id): \Illuminate\Http\RedirectResponse
+    {
+        $user = CustomUser::findOrFail($id);
+        $user->delete();
+        return redirect()->route('user.index');
+    }
+
 }
