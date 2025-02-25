@@ -20,7 +20,7 @@ class CustomUser extends Model
     protected $fillable = [
         'username',
         'email',
-        'password'
+        'password',
     ];
 
     public function getId(): int
